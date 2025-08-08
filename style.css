@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f7f8fa;
+  color: #333;
+}
+
+/* Grid Layout for Page Structure */
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+
+/* Header */
+.header {
+  grid-area: header;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+.header p {
+  margin: 0.3rem 0 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Navigation */
+.nav {
+  grid-area: nav;
+  background: #23395d;
+}
+.nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+.nav a {
+  color: white;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.nav a:hover {
+  background: #4b6cb7;
+  transform: translateY(-2px);
+}
+
+/* Main Content Area */
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+/* Content & Sidebar Boxes */
+.content, .sidebar {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Flexbox Cards */
+.card-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.card {
+  flex: 1 1 200px;
+  background: #fafafa;
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.card h3 {
+  margin-top: 0;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background: #182848;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    flex-direction: column;
+  }
+}
